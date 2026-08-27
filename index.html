@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Islam — Portfolio</title>
+  <meta name="description"
+    content="Islam's developer portfolio — showcasing projects in language learning, game development, and web design." />
+  <meta name="keywords" content="developer, portfolio, web development, game development, language learning" />
+  <meta name="author" content="Islam" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="translations.js"></script>
+</head>
+
+<body>
+  <!-- Animated background grid -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav__logo">
+      <span class="nav__logo-bracket">{</span>
+      <span class="nav__logo-name">islam</span>
+      <span class="nav__logo-bracket">}</span>
+    </a>
+    <div class="nav__links">
+      <a href="#projects" class="nav__link" data-i18n="nav-projects">Projects</a>
+      <a href="#about" class="nav__link" data-i18n="nav-about">About</a>
+      <a href="#contact" class="nav__link" data-i18n="nav-contact">Contact</a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="tr">TR</button>
+      </div>
+    </div>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#projects" class="mobile-menu__link" data-i18n="nav-projects">Projects</a>
+    <a href="#about" class="mobile-menu__link" data-i18n="nav-about">About</a>
+    <a href="#contact" class="mobile-menu__link" data-i18n="nav-contact">Contact</a>
+    <div class="lang-switch lang-switch--mobile">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ru">RU</button>
+      <button class="lang-btn" data-lang="tr">TR</button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="hero" id="hero">
+    <div class="hero__content">
+      <div class="hero__terminal">
+        <div class="terminal__bar">
+          <span class="terminal__dot terminal__dot--red"></span>
+          <span class="terminal__dot terminal__dot--yellow"></span>
+          <span class="terminal__dot terminal__dot--green"></span>
+          <span class="terminal__title">portfolio.sh</span>
+        </div>
+        <div class="terminal__body">
+          <p class="terminal__line">
+            <span class="terminal__prompt">$</span>
+            <span class="terminal__cmd" id="typedText"></span>
+            <span class="terminal__cursor">█</span>
+          </p>
+        </div>
+      </div>
+      <h1 class="hero__title">
+        Hi, I'm <span class="hero__name">Islam</span>
+      </h1>
+      <p class="hero__subtitle" data-i18n="hero-subtitle">Developer &amp; Creator</p>
+      <p class="hero__description" data-i18n="hero-desc">
+        I build apps, games, and websites — turning ideas into digital experiences.
+      </p>
+      <div class="hero__cta">
+        <a href="#projects" class="btn btn--primary" data-i18n="hero-btn-projects">
+          <span class="btn__icon">&#9654;</span> View Projects
+        </a>
+        <a href="#contact" class="btn btn--ghost" data-i18n="hero-btn-contact">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator">
+      <span data-i18n="hero-scroll">scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </header>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="section__header">
+      <span class="section__label" data-i18n="sec-projects-label">// projects</span>
+      <h2 class="section__title" data-i18n="sec-projects-title">What I've Built</h2>
+      <p class="section__desc" data-i18n="sec-projects-desc">A collection of projects spanning language learning, gaming, and web development.</p>
+    </div>
+
+    <div class="projects__grid">
+
+      <!-- Project 1: NenanMott -->
+      <article class="project-card" id="project-nenanmott">
+        <div class="project-card__media">
+          <img src="assets/nenanmott-logo.jpg" alt="NenanMott app screenshot" />
+          <!-- <video src="assets/nenanmott.mp4" autoplay muted loop playsinline></video> -->
+        </div>
+        <div class="project-card__content">
+          <div class="project-card__tags">
+            <span class="tag" data-i18n="tag-lang-learning">Language Learning</span>
+            <span class="tag" data-i18n="tag-app">App</span>
+          </div>
+          <h3 class="project-card__title">NenanMott</h3>
+          <p class="project-card__desc" data-i18n="proj-nenanmott-desc">
+            A Chechen language learning application designed to help users learn and practice the Chechen language
+            through interactive lessons and exercises.
+          </p>
+          <div class="project-card__links">
+            <a href="https://github.com/Oylancha/NenanMott" class="project-card__link" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              <span data-i18n="proj-link-source">Source</span>
+            </a>
+            <!-- <a href="#" class="project-card__link" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              Live Demo
+            </a> -->
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2: RoadCafe (bab) -->
+      <article class="project-card" id="project-roadcafe">
+        <div class="project-card__media">
+          <img src="assets/Byte.png" alt="RoadCafe game screenshot" />
+          <!-- <video src="assets/roadcafe.mp4" autoplay muted loop playsinline></video> -->
+        </div>
+        <div class="project-card__content">
+          <div class="project-card__tags">
+            <span class="tag" data-i18n="tag-game">Game</span>
+            <span class="tag" data-i18n="tag-interactive">Interactive</span>
+          </div>
+          <h3 class="project-card__title">RoadCafe</h3>
+          <p class="project-card__desc" data-i18n="proj-roadcafe-desc">
+            An engaging road cafe game where players manage and build their own roadside cafe, serving customers and
+            growing their business in a fun, interactive environment.
+          </p>
+          <div class="project-card__links">
+            <a href="https://github.com/Emreadam1/road_cafe" class="project-card__link" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              <span data-i18n="proj-link-source">Source</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3: ikies.tr -->
+      <article class="project-card" id="project-ikies">
+        <div class="project-card__media">
+
+          <img src="assets/ikies-logo.jpg" alt="ikies.tr website screenshot" />
+          <!-- <video src="assets/ikies.mp4" autoplay muted loop playsinline></video> -->
+        </div>
+        <div class="project-card__content">
+          <div class="project-card__tags">
+            <span class="tag" data-i18n="tag-website">Website</span>
+            <span class="tag" data-i18n="tag-business">Business</span>
+          </div>
+          <h3 class="project-card__title">ikies.tr</h3>
+          <p class="project-card__desc" data-i18n="proj-ikies-desc">
+            A modern, professional business website built during an internship. Designed with a clean, user-friendly
+            interface to present the company's services and identity.
+          </p>
+          <div class="project-card__links">
+            <a href="https://ikies.tr" class="project-card__link" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              <span data-i18n="proj-link-live">Live Site</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4: Bulat -->
+      <article class="project-card" id="project-bulat">
+        <div class="project-card__media">
+
+          <img src="assets/bulat-pic.png" alt="Bulat website screenshot" />
+          <!-- <video src="assets/bulat.mp4" autoplay muted loop playsinline></video> -->
+        </div>
+        <div class="project-card__content">
+          <div class="project-card__tags">
+            <span class="tag" data-i18n="tag-website">Website</span>
+            <span class="tag" data-i18n="tag-personal">Personal</span>
+          </div>
+          <h3 class="project-card__title">Bulat's Website</h3>
+          <p class="project-card__desc" data-i18n="proj-bulat-desc">
+            A personal website designed and developed for my father, showcasing his professional profile and work with
+            an elegant, modern layout.
+          </p>
+          <div class="project-card__links">
+            <a href="https://oylancha.github.io" class="project-card__link" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              <span data-i18n="proj-link-source">Source</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="section__header">
+      <span class="section__label" data-i18n="sec-about-label">// about</span>
+      <h2 class="section__title" data-i18n="sec-about-title">About Me</h2>
+    </div>
+    <div class="about__content">
+      <div class="about__text">
+        <p data-i18n="about-p1">
+          I'm a developer passionate about building things that matter - from language preservation tools to interactive
+          games to clean, modern websites. I enjoy the full spectrum of development: designing interfaces, writing
+          backend logic, and shipping polished products.
+        </p>
+        <p data-i18n="about-p2">
+          When I'm not coding, I'm exploring new technologies, working on creative projects, or finding new ways to
+          blend culture with tech.
+        </p>
+      </div>
+      <div class="about__stats">
+        <div class="stat">
+          <span class="stat__number" data-target="4">0</span>
+          <span class="stat__label" data-i18n="stat-projects">Projects</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-target="3">0</span>
+          <span class="stat__label" data-i18n="stat-domains">Domains</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">&infin;</span>
+          <span class="stat__label" data-i18n="stat-ideas">Ideas</span>
+        </div>
+      </div>
+      <div class="about__tech">
+        <h3 class="about__tech-title" data-i18n="tech-title">Tech I Work With</h3>
+        <div class="tech-grid">
+          <div class="tech-item">JavaScript</div>
+          <div class="tech-item">HTML / CSS</div>
+          <div class="tech-item">React</div>
+          <div class="tech-item">Node.js</div>
+          <div class="tech-item">Python</div>
+          <div class="tech-item">Flutter</div>
+          <div class="tech-item">Git</div>
+          <div class="tech-item">SQL</div>
+          <div class="tech-item">GoDot</div>
+        </div>
+      </div>
+
+      <!-- Expandable Sections -->
+      <div class="accordion-group">
+
+        <!-- Education -->
+        <div class="accordion" id="accordion-education">
+          <button class="accordion__trigger" aria-expanded="false">
+            <span class="accordion__icon">🎓</span>
+            <span class="accordion__title" data-i18n="acc-edu-title">Education & Languages</span>
+            <svg class="accordion__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion__panel">
+            <div class="accordion__content">
+              <h4 data-i18n="acc-edu-h4-academic">Academic Background</h4>
+              <ul>
+                <li data-i18n="acc-edu-li1"><strong>MSc in Mechanical Engineering</strong> | Istanbul Beykent University (Currently Studying)
+                </li>
+                <li data-i18n="acc-edu-li2"><strong>BSc in Computer Engineering</strong> | Istanbul Beykent University (2022 –
+                  2026)<br>Graduated with a 3.51 GPA.</li>
+                <li data-i18n="acc-edu-li3"><strong>High School Diploma</strong> | MBOU Gymnasium N5, Russia (Graduated 2022)<br>Graduated with
+                  perfect grades. Awarded "Student of the Year" (2021). Winner of multiple regional Olympiads in
+                  English.</li>
+              </ul>
+              <h4 data-i18n="acc-edu-h4-lang">Languages</h4>
+              <ul>
+                <li data-i18n="acc-edu-lang1"><strong>Russian:</strong> Native</li>
+                <li data-i18n="acc-edu-lang2"><strong>Chechen:</strong> Native</li>
+                <li data-i18n="acc-edu-lang3"><strong>English:</strong> C1 (Advanced)</li>
+                <li data-i18n="acc-edu-lang4"><strong>Turkish:</strong> B1–B2 (Intermediate)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Life Story -->
+        <div class="accordion" id="accordion-life">
+          <button class="accordion__trigger" aria-expanded="false">
+            <span class="accordion__icon">📖</span>
+            <span class="accordion__title" data-i18n="acc-story-title">My Story</span>
+            <svg class="accordion__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion__panel">
+            <div class="accordion__content">
+              <p data-i18n="acc-story-p1">I was born and raised in Urus-Martan, a small town in Chechnya. Growing up, I was always into a mix of
+                studying and sports, but during my school years, I really went all-in on my education. Around middle
+                school, I started learning English and made up my mind that I wanted to study abroad. That was also when
+                my childhood interest in tech hit a whole new level. I spent way too much time researching hacking,
+                exploring tech in general, and trying to teach myself some programming languages.</p>
+              <p data-i18n="acc-story-p2">But then things took a turn. In high school, I actually started preparing to become an architect. My
+                dad is an architect, so I was fully planning to get my bachelor's in it. I even made a bunch of 3D
+                projects and artwork during that phase that I still keep around today. At the very last second, though,
+                I changed my mind and pivoted to Computer Engineering.</p>
+              <p data-i18n="acc-story-p3">In 2022, I made the move to Istanbul and started my bachelor's at Beykent University. I learned a ton
+                of programming languages—C, C++, C#, Java, Assembly, SQL—and scored really well on their exams, even
+                though my focus wasn't on building practical projects with them at the time. Outside of coding and
+                studying, I got really into photography. I've spent countless hours editing in Adobe Lightroom and
+                putting together videos in CapCut, always trying to level up my skills. On top of that, in 2025, I
+                decided to get serious about my physique. I hit some big goals in the gym and I've been staying
+                consistent with my strength training ever since.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hobbies -->
+        <div class="accordion" id="accordion-hobbies">
+          <button class="accordion__trigger" aria-expanded="false">
+            <span class="accordion__icon">⚡</span>
+            <span class="accordion__title" data-i18n="acc-hob-title">Hobbies & Interests</span>
+            <svg class="accordion__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion__panel">
+            <div class="accordion__content">
+              <p data-i18n="acc-hob-p">When I'm not studying or working, I'm usually doing one of these:</p>
+              <ul>
+                <li data-i18n="acc-hob-li1"><strong>Photography & Video Editing:</strong> Taking photos and editing videos to try and get better
+                  at the craft.</li>
+                <li data-i18n="acc-hob-li2"><strong>Pop-Science & Lectures:</strong> I'm a massive nerd for neurobiology, biology, physics, and
+                  engineering. I love reading books or putting on a good lecture about how things work.</li>
+                <li data-i18n="acc-hob-li3"><strong>The Gym:</strong> Strength training has become a huge, consistent part of my routine.</li>
+                <li data-i18n="acc-hob-li4"><strong>Exploring & Mapping:</strong> I love wandering around new places and actually adding
+                  locations, info, and details to Google Maps.</li>
+                <li data-i18n="acc-hob-li5"><strong>Organizing:</strong> Files, physical items, literally anything. I just find it super
+                  satisfying to put things in perfect order.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="section__header">
+      <span class="section__label" data-i18n="sec-contact-label">// contact</span>
+      <h2 class="section__title" data-i18n="sec-contact-title">Let's Connect</h2>
+      <p class="section__desc" data-i18n="sec-contact-desc">Got a project idea or just want to say hi? Reach out!</p>
+    </div>
+    <div class="contact__links">
+      <a href="https://github.com/Oylancha" class="contact-card" id="contact-github" target="_blank" rel="noopener">
+        <svg class="contact-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="1.5">
+          <path
+            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+        </svg>
+        <span class="contact-card__label">GitHub</span>
+        <span class="contact-card__value" data-i18n="contact-github-val">@Oylancha</span>
+      </a>
+      <a href="https://www.linkedin.com/in/islam-elmurzaev-1bb155248/" class="contact-card" id="contact-linkedin"
+        target="_blank" rel="noopener">
+        <svg class="contact-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="1.5">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+          <rect x="2" y="9" width="4" height="12" />
+          <circle cx="4" cy="4" r="2" />
+        </svg>
+        <span class="contact-card__label">LinkedIn</span>
+        <span class="contact-card__value" data-i18n="contact-li-val">Connect with me</span>
+      </a>
+      <a href="mailto:islam.elmurzaev.2004@gmail.com" class="contact-card" id="contact-email" target="_blank"
+        rel="noopener">
+        <svg class="contact-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="1.5">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+          <polyline points="22,6 12,13 2,6" />
+        </svg>
+        <span class="contact-card__label">Email</span>
+        <span class="contact-card__value">islam.elmurzaev.2004@gmail.com</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__content">
+      <span class="footer__text">
+        <span class="footer__bracket">{</span> <span data-i18n="footer-text">Built by Islam</span> <span class="footer__bracket">}</span>
+      </span>
+      <span class="footer__year">© 2026</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
