@@ -27,7 +27,7 @@ const translations = {
     "tag-personal": "Personal",
 
     // Project: NenanMott
-    "proj-nenanmott-desc": "A Chechen language learning application designed to help users learn and practice the Chechen language through interactive lessons and exercises.",
+    "proj-nenanmott-desc": "NenanMott is an independent capstone project engineered to address the systematic lack of digital educational infrastructure for the Chechen language. The primary objective was to design an offline-first, highly responsive mobile architecture capable of handling complex spaced-repetition algorithms (SRS), dynamic multimedia generation (Text-to-Speech), and cross-orthography mappings (Cyrillic to Latin), all while maintaining a seamless user experience.",
 
     // Project: RoadCafe
     "proj-roadcafe-desc": "An engaging road cafe game where players manage and build their own roadside cafe, serving customers and growing their business in a fun, interactive environment.",
@@ -85,7 +85,36 @@ const translations = {
     "contact-li-val": "Connect with me",
 
     // Footer
-    "footer-text": "Built by Islam"
+    "footer-text": "Built by Islam",
+
+    // Project Pages Common
+    "proj-btn-back": "&larr; Back to Home",
+    "proj-read-more": "Read More",
+    "proj-sec-overview": "Project Overview",
+    "proj-sec-features": "Key Features",
+    "proj-sec-tech": "Technologies Used",
+
+    // Project Pages Features (Placeholders)
+    "proj-nenanmott-arch-title": "System Architecture & Data Flow",
+    "proj-nenanmott-arch-p1": "The platform utilizes a robust, decoupled architecture separating local data processing and state management from external cloud and AI microservices. The Flutter client heavily relies on a local SQLite database for instantaneous data retrieval and offline capability.",
+    "proj-nenanmott-arch-li1": "<strong>Local Processing:</strong> State changes immediately update local SRS metrics via the SpacedRepetitionService.",
+    "proj-nenanmott-arch-li2": "<strong>Microservice Integration:</strong> Custom Hugging Face endpoint (mms-tts-che) is asynchronously pinged for TTS, returning an MP3 byte stream cached locally to prevent redundant calls.",
+    "proj-nenanmott-arch-li3": "<strong>Cloud Synchronization:</strong> Encrypted SQLite database backups are pushed to Firebase Storage, linked to the user's Google Auth UID.",
+    "proj-nenanmott-eng-title": "Engineering & Algorithmic Challenges",
+    "proj-nenanmott-eng-li1": "<strong>Spaced Repetition System (SRS):</strong> Built a custom interval-based algorithm mathematically calculating optimal review times, graduating words through complex state layers (newWord -> learning -> reviewing -> learned).",
+    "proj-nenanmott-eng-li2": "<strong>Orthographic Mapping:</strong> Implemented an AlphabetProvider that dynamically parses and maps dictionary entries between Cyrillic (Нохчийн) and Latin (Noxçiyn) representations in real-time.",
+    "proj-nenanmott-eng-li3": "<strong>Acoustic Model Integration:</strong> Engineered a bridge to a Massively Multilingual Speech (MMS) model hosted on Hugging Face, handling raw byte-stream conversions, asynchronous file I/O, and concurrent audio playback.",
+    "proj-nenanmott-future-title": "Future Research Focus",
+    "proj-nenanmott-future-p1": "The next evolution of this project involves migrating the external Hugging Face TTS microservice to an on-device, lightweight local inference model for 100% offline capability. I also plan to develop a custom NLP lemmatizer to detect Chechen word roots and expand data pipelines for other Caucasian languages.",
+    
+    "proj-roadcafe-feat1": "Dynamic customer management and serving mechanics.",
+    "proj-roadcafe-feat2": "Cafe upgrades and business expansion options.",
+    
+    "proj-ikies-feat1": "Fully responsive design across all devices.",
+    "proj-ikies-feat2": "Optimized performance and fast load times for business users.",
+    
+    "proj-bulat-feat1": "Elegant portfolio layout showcasing architectural projects.",
+    "proj-bulat-feat2": "Custom contact forms and professional biography section."
   },
   ru: {
     // Navigation
@@ -115,7 +144,7 @@ const translations = {
     "tag-personal": "Личное",
 
     // Project Descriptions
-    "proj-nenanmott-desc": "Приложение для изучения чеченского языка, созданное для помощи пользователям в изучении и практике языка через интерактивные уроки.",
+    "proj-nenanmott-desc": "NenanMott is an independent capstone project engineered to address the systematic lack of digital educational infrastructure for the Chechen language. The primary objective was to design an offline-first, highly responsive mobile architecture capable of handling complex spaced-repetition algorithms (SRS), dynamic multimedia generation (Text-to-Speech), and cross-orthography mappings (Cyrillic to Latin), all while maintaining a seamless user experience.",
     "proj-roadcafe-desc": "Увлекательная игра о придорожном кафе, где игроки управляют и строят собственное кафе, обслуживая клиентов в веселой обстановке.",
     "proj-ikies-desc": "Современный бизнес-сайт, созданный во время стажировки. Разработан с чистым интерфейсом для представления услуг компании.",
     "proj-bulat-desc": "Личный веб-сайт, разработанный для моего отца, демонстрирующий его профессиональный профиль и работу в элегантном дизайне.",
@@ -167,7 +196,36 @@ const translations = {
     "contact-li-val": "Связаться со мной",
 
     // Footer
-    "footer-text": "Сделано Исламом"
+    "footer-text": "Сделано Исламом",
+
+    // Project Pages Common
+    "proj-btn-back": "&larr; На главную",
+    "proj-read-more": "Подробнее",
+    "proj-sec-overview": "Обзор проекта",
+    "proj-sec-features": "Ключевые особенности",
+    "proj-sec-tech": "Используемые технологии",
+
+    // Project Pages Features (Placeholders)
+    "proj-nenanmott-arch-title": "System Architecture & Data Flow",
+    "proj-nenanmott-arch-p1": "The platform utilizes a robust, decoupled architecture separating local data processing and state management from external cloud and AI microservices. The Flutter client heavily relies on a local SQLite database for instantaneous data retrieval and offline capability.",
+    "proj-nenanmott-arch-li1": "<strong>Local Processing:</strong> State changes immediately update local SRS metrics via the SpacedRepetitionService.",
+    "proj-nenanmott-arch-li2": "<strong>Microservice Integration:</strong> Custom Hugging Face endpoint (mms-tts-che) is asynchronously pinged for TTS, returning an MP3 byte stream cached locally to prevent redundant calls.",
+    "proj-nenanmott-arch-li3": "<strong>Cloud Synchronization:</strong> Encrypted SQLite database backups are pushed to Firebase Storage, linked to the user's Google Auth UID.",
+    "proj-nenanmott-eng-title": "Engineering & Algorithmic Challenges",
+    "proj-nenanmott-eng-li1": "<strong>Spaced Repetition System (SRS):</strong> Built a custom interval-based algorithm mathematically calculating optimal review times, graduating words through complex state layers (newWord -> learning -> reviewing -> learned).",
+    "proj-nenanmott-eng-li2": "<strong>Orthographic Mapping:</strong> Implemented an AlphabetProvider that dynamically parses and maps dictionary entries between Cyrillic (Нохчийн) and Latin (Noxçiyn) representations in real-time.",
+    "proj-nenanmott-eng-li3": "<strong>Acoustic Model Integration:</strong> Engineered a bridge to a Massively Multilingual Speech (MMS) model hosted on Hugging Face, handling raw byte-stream conversions, asynchronous file I/O, and concurrent audio playback.",
+    "proj-nenanmott-future-title": "Future Research Focus",
+    "proj-nenanmott-future-p1": "The next evolution of this project involves migrating the external Hugging Face TTS microservice to an on-device, lightweight local inference model for 100% offline capability. I also plan to develop a custom NLP lemmatizer to detect Chechen word roots and expand data pipelines for other Caucasian languages.",
+    
+    "proj-roadcafe-feat1": "Динамичное управление клиентами и механика обслуживания.",
+    "proj-roadcafe-feat2": "Возможности улучшения кафе и расширения бизнеса.",
+    
+    "proj-ikies-feat1": "Полностью адаптивный дизайн для всех устройств.",
+    "proj-ikies-feat2": "Оптимизированная производительность и быстрая загрузка.",
+    
+    "proj-bulat-feat1": "Элегантный макет портфолио, демонстрирующий архитектурные проекты.",
+    "proj-bulat-feat2": "Пользовательские формы связи и раздел профессиональной биографии."
   },
   tr: {
     // Navigation
@@ -197,7 +255,7 @@ const translations = {
     "tag-personal": "Kişisel",
 
     // Project Descriptions
-    "proj-nenanmott-desc": "Kullanıcıların interaktif dersler ve egzersizler aracılığıyla Çeçence öğrenmelerine ve pratik yapmalarına yardımcı olmak için tasarlanmış bir dil öğrenme uygulaması.",
+    "proj-nenanmott-desc": "NenanMott is an independent capstone project engineered to address the systematic lack of digital educational infrastructure for the Chechen language. The primary objective was to design an offline-first, highly responsive mobile architecture capable of handling complex spaced-repetition algorithms (SRS), dynamic multimedia generation (Text-to-Speech), and cross-orthography mappings (Cyrillic to Latin), all while maintaining a seamless user experience.",
     "proj-roadcafe-desc": "Oyuncuların eğlenceli ve interaktif bir ortamda kendi yol kenarı kafelerini yönettikleri ve inşa ettikleri ilgi çekici bir oyun.",
     "proj-ikies-desc": "Bir staj sırasında oluşturulan modern, profesyonel bir kurumsal web sitesi. Şirketin hizmetlerini ve kimliğini sunmak için temiz bir arayüzle tasarlandı.",
     "proj-bulat-desc": "Babam için tasarlanıp geliştirilen, zarif ve modern bir düzen ile profesyonel profilini ve çalışmalarını sergileyen kişisel bir web sitesi.",
@@ -249,6 +307,35 @@ const translations = {
     "contact-li-val": "Benimle bağlantı kur",
 
     // Footer
-    "footer-text": "İslam tarafından yapılmıştır"
+    "footer-text": "İslam tarafından yapılmıştır",
+
+    // Project Pages Common
+    "proj-btn-back": "&larr; Ana Sayfaya Dön",
+    "proj-read-more": "Devamını Oku",
+    "proj-sec-overview": "Proje Genel Bakış",
+    "proj-sec-features": "Temel Özellikler",
+    "proj-sec-tech": "Kullanılan Teknolojiler",
+
+    // Project Pages Features (Placeholders)
+    "proj-nenanmott-arch-title": "System Architecture & Data Flow",
+    "proj-nenanmott-arch-p1": "The platform utilizes a robust, decoupled architecture separating local data processing and state management from external cloud and AI microservices. The Flutter client heavily relies on a local SQLite database for instantaneous data retrieval and offline capability.",
+    "proj-nenanmott-arch-li1": "<strong>Local Processing:</strong> State changes immediately update local SRS metrics via the SpacedRepetitionService.",
+    "proj-nenanmott-arch-li2": "<strong>Microservice Integration:</strong> Custom Hugging Face endpoint (mms-tts-che) is asynchronously pinged for TTS, returning an MP3 byte stream cached locally to prevent redundant calls.",
+    "proj-nenanmott-arch-li3": "<strong>Cloud Synchronization:</strong> Encrypted SQLite database backups are pushed to Firebase Storage, linked to the user's Google Auth UID.",
+    "proj-nenanmott-eng-title": "Engineering & Algorithmic Challenges",
+    "proj-nenanmott-eng-li1": "<strong>Spaced Repetition System (SRS):</strong> Built a custom interval-based algorithm mathematically calculating optimal review times, graduating words through complex state layers (newWord -> learning -> reviewing -> learned).",
+    "proj-nenanmott-eng-li2": "<strong>Orthographic Mapping:</strong> Implemented an AlphabetProvider that dynamically parses and maps dictionary entries between Cyrillic (Нохчийн) and Latin (Noxçiyn) representations in real-time.",
+    "proj-nenanmott-eng-li3": "<strong>Acoustic Model Integration:</strong> Engineered a bridge to a Massively Multilingual Speech (MMS) model hosted on Hugging Face, handling raw byte-stream conversions, asynchronous file I/O, and concurrent audio playback.",
+    "proj-nenanmott-future-title": "Future Research Focus",
+    "proj-nenanmott-future-p1": "The next evolution of this project involves migrating the external Hugging Face TTS microservice to an on-device, lightweight local inference model for 100% offline capability. I also plan to develop a custom NLP lemmatizer to detect Chechen word roots and expand data pipelines for other Caucasian languages.",
+    
+    "proj-roadcafe-feat1": "Dinamik müşteri yönetimi ve servis mekanikleri.",
+    "proj-roadcafe-feat2": "Kafe yükseltmeleri ve iş genişletme seçenekleri.",
+    
+    "proj-ikies-feat1": "Tüm cihazlarda tamamen duyarlı tasarım.",
+    "proj-ikies-feat2": "İş kullanıcıları için optimize edilmiş performans ve hızlı yükleme süreleri.",
+    
+    "proj-bulat-feat1": "Mimari projeleri sergileyen zarif portföy düzeni.",
+    "proj-bulat-feat2": "Özel iletişim formları ve profesyonel biyografi bölümü."
   }
 };

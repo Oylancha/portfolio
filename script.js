@@ -42,49 +42,51 @@ document.addEventListener('DOMContentLoaded', () => {
    TYPING ANIMATION
    ============================================ */
 const typedTextEl = document.getElementById('typedText');
-const phrases = [
-  'cat projects.json',
-  'echo "Welcome to my portfolio"',
-  'ls ~/projects/',
-  'git log --oneline -1',
-];
+if (typedTextEl) {
+  const phrases = [
+    'cat projects.json',
+    'echo "Welcome to my portfolio"',
+    'ls ~/projects/',
+    'git log --oneline -1',
+  ];
 
-let phraseIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typeSpeed = 80;
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typeSpeed = 80;
 
-function typeWriter() {
-  const currentPhrase = phrases[phraseIndex];
+  function typeWriter() {
+    const currentPhrase = phrases[phraseIndex];
 
-  if (!isDeleting) {
-    typedTextEl.textContent = currentPhrase.substring(0, charIndex + 1);
-    charIndex++;
+    if (!isDeleting) {
+      typedTextEl.textContent = currentPhrase.substring(0, charIndex + 1);
+      charIndex++;
 
-    if (charIndex === currentPhrase.length) {
-      isDeleting = true;
-      typeSpeed = 2000; // pause before deleting
+      if (charIndex === currentPhrase.length) {
+        isDeleting = true;
+        typeSpeed = 2000; // pause before deleting
+      } else {
+        typeSpeed = 60 + Math.random() * 60;
+      }
     } else {
-      typeSpeed = 60 + Math.random() * 60;
-    }
-  } else {
-    typedTextEl.textContent = currentPhrase.substring(0, charIndex - 1);
-    charIndex--;
+      typedTextEl.textContent = currentPhrase.substring(0, charIndex - 1);
+      charIndex--;
 
-    if (charIndex === 0) {
-      isDeleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-      typeSpeed = 400; // pause before next phrase
-    } else {
-      typeSpeed = 30;
+      if (charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        typeSpeed = 400; // pause before next phrase
+      } else {
+        typeSpeed = 30;
+      }
     }
+
+    setTimeout(typeWriter, typeSpeed);
   }
 
-  setTimeout(typeWriter, typeSpeed);
+  // Start typing
+  setTimeout(typeWriter, 800);
 }
-
-// Start typing
-setTimeout(typeWriter, 800);
 
 
 /* ============================================
@@ -152,18 +154,20 @@ function animateCounter(el, target) {
 const navToggle = document.getElementById('navToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 
-navToggle.addEventListener('click', () => {
-  navToggle.classList.toggle('active');
-  mobileMenu.classList.toggle('active');
-});
-
-// Close mobile menu when clicking a link
-mobileMenu.querySelectorAll('.mobile-menu__link').forEach((link) => {
-  link.addEventListener('click', () => {
-    navToggle.classList.remove('active');
-    mobileMenu.classList.remove('active');
+if (navToggle && mobileMenu) {
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
   });
-});
+
+  // Close mobile menu when clicking a link
+  mobileMenu.querySelectorAll('.mobile-menu__link').forEach((link) => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    });
+  });
+}
 
 
 /* ============================================

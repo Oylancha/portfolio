@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NenanMott Project | Islam's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__content">
+      <div class="nav__logo">
+        <a href="index.html" class="nav__logo-name" style="text-decoration:none; color:inherit;">islam.dev</a>
+      </div>
+      <div class="nav__links">
+        <a href="index.html#projects" class="nav__link" data-i18n="nav-projects">Projects</a>
+        <a href="index.html#about" class="nav__link" data-i18n="nav-about">About</a>
+        <a href="index.html#contact" class="nav__link" data-i18n="nav-contact">Contact</a>
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn" data-lang="tr">TR</button>
+        </div>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#projects" class="mobile-menu__link" data-i18n="nav-projects">Projects</a>
+    <a href="index.html#about" class="mobile-menu__link" data-i18n="nav-about">About</a>
+    <a href="index.html#contact" class="mobile-menu__link" data-i18n="nav-contact">Contact</a>
+    <div class="lang-switch lang-switch--mobile">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ru">RU</button>
+      <button class="lang-btn" data-lang="tr">TR</button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="project-page">
+
+    <div class="project-header">
+      <a href="index.html#projects" class="btn-back" data-i18n="proj-btn-back">&larr; Back to Home</a>
+      <h1 class="project-header__title">NenanMott</h1>
+      <div class="project-header__tags">
+        <span class="tag" data-i18n="tag-lang-learning">Language Learning</span>
+        <span class="tag" data-i18n="tag-app">App</span>
+      </div>
+    </div>
+
+    <div class="project-hero-media">
+      <img src="assets/nenanmott-logo.jpg" alt="NenanMott Project">
+    </div>
+
+    <div class="project-section">
+      <h2 class="project-section__title" data-i18n="proj-sec-overview">Project Overview</h2>
+      <p data-i18n="proj-nenanmott-desc">
+        A Chechen language learning application designed to help users learn and practice the Chechen language through
+        interactive lessons and exercises.
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h2 class="project-section__title" data-i18n="proj-nenanmott-arch-title">System Architecture & Data Flow</h2>
+      <p data-i18n="proj-nenanmott-arch-p1">
+        The platform utilizes a robust, decoupled architecture separating local data processing and state management from external cloud and AI microservices. The Flutter client heavily relies on a local SQLite database for instantaneous data retrieval and offline capability.
+      </p>
+      <ul class="project-features-list">
+        <li data-i18n="proj-nenanmott-arch-li1"><strong>Local Processing:</strong> State changes immediately update local SRS metrics via the SpacedRepetitionService.</li>
+        <li data-i18n="proj-nenanmott-arch-li2"><strong>Microservice Integration:</strong> Custom Hugging Face endpoint (mms-tts-che) is asynchronously pinged for TTS, returning an MP3 byte stream cached locally to prevent redundant calls.</li>
+        <li data-i18n="proj-nenanmott-arch-li3"><strong>Cloud Synchronization:</strong> Encrypted SQLite database backups are pushed to Firebase Storage, linked to the user's Google Auth UID.</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h2 class="project-section__title" data-i18n="proj-nenanmott-eng-title">Engineering & Algorithmic Challenges</h2>
+      <ul class="project-features-list">
+        <li data-i18n="proj-nenanmott-eng-li1"><strong>Spaced Repetition System (SRS):</strong> Built a custom interval-based algorithm mathematically calculating optimal review times, graduating words through complex state layers (newWord -> learning -> reviewing -> learned).</li>
+        <li data-i18n="proj-nenanmott-eng-li2"><strong>Orthographic Mapping:</strong> Implemented an AlphabetProvider that dynamically parses and maps dictionary entries between Cyrillic (Нохчийн) and Latin (Noxçiyn) representations in real-time.</li>
+        <li data-i18n="proj-nenanmott-eng-li3"><strong>Acoustic Model Integration:</strong> Engineered a bridge to a Massively Multilingual Speech (MMS) model hosted on Hugging Face, handling raw byte-stream conversions, asynchronous file I/O, and concurrent audio playback.</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h2 class="project-section__title" data-i18n="proj-nenanmott-future-title">Future Research Focus</h2>
+      <p data-i18n="proj-nenanmott-future-p1">
+        The next evolution of this project involves migrating the external Hugging Face TTS microservice to an on-device, lightweight local inference model for 100% offline capability. I also plan to develop a custom NLP lemmatizer to detect Chechen word roots and expand data pipelines for other Caucasian languages.
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h2 class="project-section__title" data-i18n="proj-sec-tech">Technologies Used</h2>
+      <div class="tech-grid" style="margin-top: 10px;">
+        <div class="tech-item">Dart / Flutter</div>
+        <div class="tech-item">Provider</div>
+        <div class="tech-item">sqflite</div>
+        <div class="tech-item">Firebase</div>
+        <div class="tech-item">Python / Hugging Face</div>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/Oylancha/NenanMott_architecture" class="project-card__link" target="_blank"
+          rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+            </path>
+          </svg>
+          <span data-i18n="proj-link-source">Source</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" style="margin-top: 40px;">
+    <div class="footer__content">
+      <span class="footer__text">
+        <span class="footer__bracket">{</span> <span data-i18n="footer-text">Built by Islam</span> <span
+          class="footer__bracket">}</span>
+      </span>
+      <span class="footer__year">© 2026</span>
+    </div>
+  </footer>
+
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
